@@ -1,0 +1,42 @@
+.form-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #fff; */
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    background: #333;
+}
+
+.form-container form::after {
+    content: "ac";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale(1.03);
+    background-image: linear-gradient(135deg, #662D8C, #ED1E79);
+    z-index: -1;
+    border-radius: 20px;
+    filter: blur(4px);
+}
+
+.form-container form:hover::after {
+    filter: blur(8px);
+}
+
+form input {
+    margin: 10px;
+}

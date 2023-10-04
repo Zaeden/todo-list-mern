@@ -5,7 +5,7 @@ import TaskModel from "../models/todoModel.js";
 const getAllTasks = async (req, res) => {
   try {
     const result = await TaskModel.find({});
-    res.status(201).json(result);
+    res.status(201).json({count: result.length, data: result});
   } catch (error) {
     console.log(error);
     res.status(400).json({ error: error.message });
