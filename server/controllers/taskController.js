@@ -29,7 +29,8 @@ const createTask = async (req, res) => {
   try {
     const { taskTitle, taskContent } = req.body;
     if (!taskTitle || !taskContent) {
-      res.status(401).send({ error: "Kindly enter all the require details." });
+      res.status(401).json({ error: "Kindly enter all the require details." });
+      return;
     }
 
     const result = await TaskModel.create({
@@ -39,7 +40,7 @@ const createTask = async (req, res) => {
 
     res.status(201).json(result);
   } catch (error) {
-    res.status(500).send({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 };
 
@@ -49,7 +50,8 @@ const updateTask = async (req, res) => {
     const { id } = req.params;
     const { taskTitle, taskContent } = req.body;
     if (!taskTitle || !taskContent) {
-      res.status(401).send({ error: "Kindly enter all the require details." });
+      res.status(401).json({ error: "Kindly enter all the require details." });
+      return;
     }
 
     const result = await TaskModel.findByIdAndUpdate(id, {

@@ -8,7 +8,7 @@ const taskRouter = express.Router();
 taskRouter.get("/", taskController.getAllTasks);
 
 //Route to get specific task by it ID.
-taskRouter.get("/tasks/:id", taskController.getSpecificTask);
+taskRouter.get("/:id", taskController.getSpecificTask);
 
 //Route to create a new task.
 taskRouter.post("/", taskController.createTask);
