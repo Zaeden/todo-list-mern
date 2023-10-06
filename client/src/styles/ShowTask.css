@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-container {
+    padding: 16px;
+    padding-bottom: 8px;
+    border-radius: 20px;
+    background-image: linear-gradient(135deg, #662D8C, #ED1E79);
+    position: relative;
+}
+
+.details-card {
+    width: 250px;
+    border-radius: 10%;
+    color: #222;
+    margin: 25px;
+    background-image: linear-gradient(135deg, #662D8C, #ED1E79);
+}
+
+.details-container::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale(1.01);
+    background-image: linear-gradient(135deg, #662D8C, #ED1E79);
+    z-index: -1;
+    border-radius: 20px;
+    filter: blur(4px);
+}
+
+.details-container:hover::after {
+    filter: blur(8px);
+}
+
+.details-card h1 {
+    padding: 16px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.task-content {
+    height: 200px;
+    padding: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.task-timestamp {
+    margin-top: 8px;
+    text-align: center;
+    font-weight: 500;
+}

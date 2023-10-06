@@ -22,7 +22,7 @@ const TaskCard = (props) => {
         <Link to={`/tasks/update/${id}`}>
           <MdSystemUpdateAlt className="action-btn-icon" />
         </Link>
-        <Link to={`/tasks/update/${id}`}>
+        <Link to={`/tasks/delete/${id}`}>
           <MdOutlineDelete className="action-btn-icon" />
         </Link>
       </div>
